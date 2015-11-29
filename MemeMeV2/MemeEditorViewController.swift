@@ -171,6 +171,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return imageMacro
     }
     
+    /**
+        Saves the current image macro to the saved memes collection
+    */
+    func save(newMeme: Meme){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.meme.append(newMeme)
+    }
+    
     
     /* Interface Builder Action functions */
     
@@ -206,12 +214,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         shareController.completionWithItemsHandler = {(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError: NSError?) in
             // Check if user clicked the cancel button or otherwise failed to complete the share before saving Meme object
             if(completed){
-                // Removing variable name temporarily since nothing is done with Meme object to avoid Xcode issue warning
-                _ = Meme(topText: self.topTextField.text!, bottomText: self.bottomTextField.text!, originalImage: self.imagePickerView.image!, memeImage: imageMacro)
+                let newMeme = Meme(topText: self.topTextField.text!, bottomText: self.bottomTextField.text!, originalImage: self.imagePickerView.image!, memeImage: imageMacro)
+                self.save(newMeme)
             }
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
         navigationController?.presentViewController(shareController, animated: true, completion: nil)
+        
+        // TODO: Navigate to list of shared memes
         
     }
     
