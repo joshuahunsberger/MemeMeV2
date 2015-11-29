@@ -176,7 +176,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     */
     func save(newMeme: Meme){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.meme.append(newMeme)
+        appDelegate.memes.append(newMeme)
     }
     
     
