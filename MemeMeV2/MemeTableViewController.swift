@@ -32,4 +32,13 @@ class MemeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         // TODO: navigate to meme detail view
     }
+    
+    /* Interface Builder Action Functions */
+
+    
+    @IBAction func addNewMeme(sender: UIBarButtonItem) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NewMemeViewController") as! UINavigationController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
 }

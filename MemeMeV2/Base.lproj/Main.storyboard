@@ -8,7 +8,7 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -214,7 +214,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="Table" selectedImage="Table" id="yJz-bG-BBh"/>
-                    <navigationItem key="navigationItem" id="E0w-4v-7mw"/>
+                    <navigationItem key="navigationItem" id="E0w-4v-7mw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uh0-Lc-g1n">
+                            <connections>
+                                <action selector="addNewMeme:" destination="Ygr-LR-YSr" id="rzW-Pv-ixI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CV-Wx-8qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +287,13 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="" image="Collection" selectedImage="Collection" id="ZgG-NN-o4y"/>
-                    <navigationItem key="navigationItem" id="Vjz-m8-PXh"/>
+                    <navigationItem key="navigationItem" id="Vjz-m8-PXh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKc-pY-sUE">
+                            <connections>
+                                <action selector="addNewMeme:" destination="mZ3-nb-XSu" id="07K-fa-FPP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-06-6Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,8 +302,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Fz-3E-ZIr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EDV-dP-Wft" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="NoH-Lp-nZV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewMemeViewController" id="NoH-Lp-nZV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZJ9-eN-UHn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -301,6 +312,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cLY-0i-vbu"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDV-dP-Wft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1323" y="79.5"/>
         </scene>
