@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="-409" y="79"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meme Table View Controller-->
         <scene sceneID="Si0-5R-am1">
             <objects>
-                <tableViewController id="Ygr-LR-YSr" sceneMemberID="viewController">
+                <tableViewController id="Ygr-LR-YSr" customClass="MemeTableViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKY-c0-5KQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CV-Wx-8qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-403" y="850"/>
+        </scene>
+        <!--Meme Collection View Controller-->
+        <scene sceneID="zQK-8D-Dyz">
+            <objects>
+                <collectionViewController id="mZ3-nb-XSu" customClass="MemeCollectionViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fig-0Z-vsb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8DV-o5-R0W">
+                            <size key="itemSize" width="250" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YOM-rA-sff" customClass="MemeCollectionViewCell" customModule="MemeMeV2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-Fe-HjM">
+                                            <rect key="frame" x="8" y="8" width="234" height="184"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <connections>
+                                    <outlet property="imageView" destination="ixw-Fe-HjM" id="M1H-jl-7Qv"/>
+                                    <outlet property="memeImageView" destination="ixw-Fe-HjM" id="Nuy-iH-iFz"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mZ3-nb-XSu" id="07E-xD-Vxq"/>
+                            <outlet property="delegate" destination="mZ3-nb-XSu" id="Rdq-X5-IhQ"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-06-6Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="1582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Fz-3E-ZIr">

@@ -14,6 +14,8 @@
 		422354F61BEF9A5100A2EAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422354F41BEF9A5100A2EAEE /* LaunchScreen.storyboard */; };
 		4269155E1BFEDDAA00B73B7F /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269155D1BFEDDAA00B73B7F /* Meme.swift */; };
 		426B538D1C0B7CE2002B6130 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B538C1C0B7CE2002B6130 /* MemeTableViewController.swift */; };
+		426B538F1C0B7FC8002B6130 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B538E1C0B7FC8002B6130 /* MemeCollectionViewController.swift */; };
+		426B53911C1514DD002B6130 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B53901C1514DD002B6130 /* MemeCollectionViewCell.swift */; };
 		4290F4271BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290F4261BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		422354F71BEF9A5100A2EAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4269155D1BFEDDAA00B73B7F /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		426B538C1C0B7CE2002B6130 /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		426B538E1C0B7FC8002B6130 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
+		426B53901C1514DD002B6130 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4290F4261BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +73,8 @@
 				422354F41BEF9A5100A2EAEE /* LaunchScreen.storyboard */,
 				422354F71BEF9A5100A2EAEE /* Info.plist */,
 				426B538C1C0B7CE2002B6130 /* MemeTableViewController.swift */,
+				426B538E1C0B7FC8002B6130 /* MemeCollectionViewController.swift */,
+				426B53901C1514DD002B6130 /* MemeCollectionViewCell.swift */,
 			);
 			path = MemeMeV2;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 				4269155E1BFEDDAA00B73B7F /* Meme.swift in Sources */,
 				4290F4271BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift in Sources */,
 				426B538D1C0B7CE2002B6130 /* MemeTableViewController.swift in Sources */,
+				426B53911C1514DD002B6130 /* MemeCollectionViewCell.swift in Sources */,
+				426B538F1C0B7FC8002B6130 /* MemeCollectionViewController.swift in Sources */,
 				422354EC1BEF9A5100A2EAEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
