@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="-1438" y="1204"/>
         </scene>
-        <!--Item-->
+        <!--Meme Table View Controller-->
         <scene sceneID="Si0-5R-am1">
             <objects>
                 <tableViewController id="Ygr-LR-YSr" customClass="MemeTableViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,13 +195,13 @@
                             <outlet property="delegate" destination="Ygr-LR-YSr" id="j8o-bf-G93"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="yJz-bG-BBh"/>
+                    <tabBarItem key="tabBarItem" title="" image="Collection" selectedImage="Collection" id="yJz-bG-BBh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CV-Wx-8qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-403" y="850"/>
         </scene>
-        <!--Item-->
+        <!--Meme Collection View Controller-->
         <scene sceneID="zQK-8D-Dyz">
             <objects>
                 <collectionViewController id="mZ3-nb-XSu" customClass="MemeCollectionViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,7 +243,7 @@
                             <outlet property="delegate" destination="mZ3-nb-XSu" id="Rdq-X5-IhQ"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="ZgG-NN-o4y"/>
+                    <tabBarItem key="tabBarItem" title="" image="Table" selectedImage="Table" id="ZgG-NN-o4y"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-06-6Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,4 +267,8 @@
             <point key="canvasLocation" x="-1323" y="79.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Collection" width="30" height="30"/>
+        <image name="Table" width="30" height="30"/>
+    </resources>
 </document>
