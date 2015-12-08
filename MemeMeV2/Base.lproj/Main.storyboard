@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Meme Editor View Controller-->
@@ -166,45 +167,48 @@
         <scene sceneID="Si0-5R-am1">
             <objects>
                 <tableViewController id="Ygr-LR-YSr" customClass="MemeTableViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKY-c0-5KQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKY-c0-5KQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedMemeCell" rowHeight="114" id="waN-fd-1tU" customClass="MemeTableViewCell" customModule="MemeMeV2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="114"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedMemeCell" rowHeight="130" id="waN-fd-1tU" customClass="MemeTableViewCell" customModule="MemeMeV2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waN-fd-1tU" id="31D-Tm-9ur">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL2-1b-dBx">
-                                            <rect key="frame" x="504" y="46" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE8-kH-WTE">
+                                            <rect key="frame" x="212" y="54" width="380" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-vM-2e5">
-                                            <rect key="frame" x="0.0" y="-7" width="240" height="128"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-vM-2e5">
+                                            <rect key="frame" x="8" y="15" width="177" height="100"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="WIu-z7-BKl"/>
+                                                <constraint firstAttribute="width" constant="177" id="pFt-B0-sw2"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE8-kH-WTE">
-                                            <rect key="frame" x="292" y="46" width="42" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="oWo-vM-2e5" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="RVq-cp-sao"/>
+                                        <constraint firstItem="uE8-kH-WTE" firstAttribute="centerY" secondItem="31D-Tm-9ur" secondAttribute="centerY" id="a5Y-qd-r4z"/>
+                                        <constraint firstItem="oWo-vM-2e5" firstAttribute="centerY" secondItem="31D-Tm-9ur" secondAttribute="centerY" id="bTP-36-5dY"/>
+                                        <constraint firstItem="uE8-kH-WTE" firstAttribute="leading" secondItem="oWo-vM-2e5" secondAttribute="trailing" constant="27" id="foX-mW-ct7"/>
+                                        <constraint firstItem="uE8-kH-WTE" firstAttribute="trailing" secondItem="31D-Tm-9ur" secondAttribute="trailingMargin" id="ohA-wF-MHW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="bottomTextLabel" destination="xL2-1b-dBx" id="dCt-QI-NKo"/>
                                     <outlet property="memeImageView" destination="oWo-vM-2e5" id="AyC-hD-NEo"/>
-                                    <outlet property="topTextLabel" destination="uE8-kH-WTE" id="NVy-Qy-UiI"/>
+                                    <outlet property="memeTextLabel" destination="uE8-kH-WTE" id="Nek-QY-6c0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
