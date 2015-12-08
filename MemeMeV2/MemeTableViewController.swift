@@ -14,7 +14,15 @@ class MemeTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    override func viewDidAppear(animated: Bool) {
+    // Set default text macro style attributes
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor(),
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
+        NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
+    ]
+    
+    override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
     
@@ -32,6 +40,8 @@ class MemeTableViewController: UITableViewController {
         let meme = memes[indexPath.row]
         
         cell.memeImageView.image = meme.originalImage
+        cell.topTextLabel.attributedText = NSAttributedString(string: meme.topText, attributes: memeTextAttributes)
+        cell.bottomTextLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: memeTextAttributes)
         cell.memeTextLabel.text = meme.topText + "..." + meme.bottomText
         
         return cell

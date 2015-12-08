@@ -195,20 +195,46 @@
                                                 <constraint firstAttribute="width" constant="177" id="pFt-B0-sw2"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lk-pI-fcS">
+                                            <rect key="frame" x="8" y="13" width="177" height="24"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="177" id="dOY-QN-I2s"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-v8-LaR">
+                                            <rect key="frame" x="8" y="92" width="177" height="24"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="177" id="uAD-7n-GLP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LQ9-v8-LaR" secondAttribute="bottom" constant="5" id="8dO-GQ-BOb"/>
+                                        <constraint firstItem="LQ9-v8-LaR" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="AUE-HN-Q3m"/>
+                                        <constraint firstItem="4Lk-pI-fcS" firstAttribute="top" secondItem="31D-Tm-9ur" secondAttribute="topMargin" constant="5" id="Aqu-Wf-Rua"/>
                                         <constraint firstItem="oWo-vM-2e5" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="RVq-cp-sao"/>
                                         <constraint firstItem="uE8-kH-WTE" firstAttribute="centerY" secondItem="31D-Tm-9ur" secondAttribute="centerY" id="a5Y-qd-r4z"/>
                                         <constraint firstItem="oWo-vM-2e5" firstAttribute="centerY" secondItem="31D-Tm-9ur" secondAttribute="centerY" id="bTP-36-5dY"/>
                                         <constraint firstItem="uE8-kH-WTE" firstAttribute="leading" secondItem="oWo-vM-2e5" secondAttribute="trailing" constant="27" id="foX-mW-ct7"/>
                                         <constraint firstItem="uE8-kH-WTE" firstAttribute="trailing" secondItem="31D-Tm-9ur" secondAttribute="trailingMargin" id="ohA-wF-MHW"/>
+                                        <constraint firstItem="4Lk-pI-fcS" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="sPK-yI-uCI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="bottomTextLabel" destination="LQ9-v8-LaR" id="Lu7-9Y-5Wf"/>
                                     <outlet property="memeImageView" destination="oWo-vM-2e5" id="AyC-hD-NEo"/>
                                     <outlet property="memeTextLabel" destination="uE8-kH-WTE" id="Nek-QY-6c0"/>
+                                    <outlet property="topTextLabel" destination="4Lk-pI-fcS" id="QSS-lS-cSD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
