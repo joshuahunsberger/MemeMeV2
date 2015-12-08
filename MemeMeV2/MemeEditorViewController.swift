@@ -229,10 +229,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         Clears the image and resets the top and bottom labels. Also reset share button to disabled.
     */
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
-        imagePickerView.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        shareButton.enabled = false
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
