@@ -302,7 +302,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Fz-3E-ZIr">
             <objects>
-                <navigationController storyboardIdentifier="NewMemeViewController" id="NoH-Lp-nZV" sceneMemberID="viewController">
+                <navigationController id="NoH-Lp-nZV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZJ9-eN-UHn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

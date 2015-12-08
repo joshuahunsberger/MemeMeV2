@@ -28,8 +28,9 @@ class MemeCollectionViewController: UICollectionViewController {
     /* Interface Builder action functions */
     
     @IBAction func addNewMeme(sender: UIBarButtonItem) {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NewMemeViewController") as! UINavigationController
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        let navigationController = UINavigationController(rootViewController: controller)
         
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.presentViewController(navigationController, animated: true, completion: nil)
     }
 }
