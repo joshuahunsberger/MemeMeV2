@@ -297,8 +297,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-Fe-HjM">
-                                            <rect key="frame" x="8" y="8" width="150" height="150"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-Fe-HjM">
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
                                             <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwQ-ug-O5g">
@@ -321,16 +321,16 @@
                                 </view>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="bottom" secondItem="YOM-rA-sff" secondAttribute="bottomMargin" id="9Vi-au-hOa"/>
-                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="top" secondItem="YOM-rA-sff" secondAttribute="topMargin" id="Nvu-7E-cOK"/>
-                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="trailing" secondItem="YOM-rA-sff" secondAttribute="trailingMargin" id="WY3-Xb-YSY"/>
-                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="top" secondItem="YOM-rA-sff" secondAttribute="topMargin" id="WrC-bt-d3n"/>
-                                    <constraint firstItem="49u-yG-gdw" firstAttribute="bottom" secondItem="YOM-rA-sff" secondAttribute="bottomMargin" id="YpT-y2-UoL"/>
-                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="aD9-lp-tbE"/>
-                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="trailing" secondItem="YOM-rA-sff" secondAttribute="trailingMargin" id="aG6-Fa-fd3"/>
-                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="aVI-Ys-qEj"/>
-                                    <constraint firstItem="49u-yG-gdw" firstAttribute="trailing" secondItem="YOM-rA-sff" secondAttribute="trailingMargin" id="ndb-S4-rmG"/>
-                                    <constraint firstItem="49u-yG-gdw" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="xlH-5A-X9K"/>
+                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leading" id="2Sq-XS-eXL"/>
+                                    <constraint firstItem="49u-yG-gdw" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="5vE-g1-ulQ"/>
+                                    <constraint firstItem="49u-yG-gdw" firstAttribute="bottom" secondItem="YOM-rA-sff" secondAttribute="bottomMargin" id="DYf-ok-i0G"/>
+                                    <constraint firstItem="ixw-Fe-HjM" firstAttribute="top" secondItem="YOM-rA-sff" secondAttribute="top" id="DbE-xi-GVl"/>
+                                    <constraint firstItem="49u-yG-gdw" firstAttribute="trailing" secondItem="YOM-rA-sff" secondAttribute="trailingMargin" id="IFG-Bh-rgI"/>
+                                    <constraint firstAttribute="trailing" secondItem="ixw-Fe-HjM" secondAttribute="trailing" id="J1N-f6-McC"/>
+                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="trailing" secondItem="YOM-rA-sff" secondAttribute="trailingMargin" id="KRI-jH-3aa"/>
+                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="top" secondItem="YOM-rA-sff" secondAttribute="topMargin" id="PXt-cI-4qV"/>
+                                    <constraint firstItem="cwQ-ug-O5g" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="Wtn-nM-gmY"/>
+                                    <constraint firstAttribute="bottom" secondItem="ixw-Fe-HjM" secondAttribute="bottom" id="ioH-8h-91d"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="bottomTextLabel" destination="49u-yG-gdw" id="X2l-12-x58"/>
@@ -352,6 +352,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="8DV-o5-R0W" id="NbV-oj-Vh8"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-06-6Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

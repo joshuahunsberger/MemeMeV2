@@ -9,6 +9,10 @@
 import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
+    
+    /* Interface Builder outlets*/
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var memes : [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
@@ -21,8 +25,19 @@ class MemeCollectionViewController: UICollectionViewController {
         NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
     ]
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space: CGFloat = 3.0
+        let wDimension = (self.view.frame.width - (2*space)) / 3.0
+        let hDimension = (self.view.frame.height - (2*space)) / 6.0
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(wDimension, hDimension)
+    }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         collectionView?.reloadData()
     }
     
