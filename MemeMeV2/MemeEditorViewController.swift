@@ -216,13 +216,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             if(completed){
                 let newMeme = Meme(topText: self.topTextField.text!, bottomText: self.bottomTextField.text!, originalImage: self.imagePickerView.image!, memeImage: imageMacro)
                 self.save(newMeme)
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             }
-            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
         navigationController?.presentViewController(shareController, animated: true, completion: nil)
-        
-        // TODO: Navigate to list of shared memes
-        
     }
     
     /**
