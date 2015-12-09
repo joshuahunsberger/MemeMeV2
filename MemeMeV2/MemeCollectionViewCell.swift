@@ -1,6 +1,6 @@
 //
 //  MemeCollectionViewCell.swift
-//  MemeMeV2
+//  MemeMeV2 - MemeMe 2.0
 //
 //  Created by Joshua Hunsberger on 12/6/15.
 //  Copyright © 2015 Joshua Hunsberger. All rights reserved.

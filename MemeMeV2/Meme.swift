@@ -1,6 +1,6 @@
 //
 //  Meme.swift
-//  MemeMeV1 - MemeMe 1.0
+//  MemeMeV2 - MemeMe Version 2.0
 //
 //  Created by Joshua Hunsberger on 11/15/15.
 //  Copyright © 2015 Joshua Hunsberger. All rights reserved.

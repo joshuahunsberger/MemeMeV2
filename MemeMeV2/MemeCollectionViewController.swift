@@ -1,6 +1,6 @@
 //
 //  MemeCollectionViewController.swift
-//  MemeMeV2
+//  MemeMeV2 - MemeMe 2.0
 //
 //  Created by Joshua Hunsberger on 11/29/15.
 //  Copyright © 2015 Joshua Hunsberger. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
-    /* Interface Builder outlets*/
+    /* Interface Builder outlet variables */
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes : [Meme] {
@@ -52,8 +52,6 @@ class MemeCollectionViewController: UICollectionViewController {
         cell.memeImageView.image = meme.originalImage
         cell.topTextLabel.attributedText = NSAttributedString(string: meme.topText, attributes: memeTextAttributes)
         cell.bottomTextLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: memeTextAttributes)
-
-        
         
         return cell
     }

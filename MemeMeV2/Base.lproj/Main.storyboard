@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="339" y="814"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Detail View Controller-->
         <scene sceneID="169-8v-7Hx">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" id="BhK-Fa-TYE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="BhK-Fa-TYE" customClass="MemeDetailViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yel-LL-tF0"/>
                         <viewControllerLayoutGuide type="bottom" id="q8T-Xg-gMA"/>
@@ -268,7 +268,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhA-NP-jo1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhA-NP-jo1">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <animations/>
                             </imageView>
@@ -282,6 +282,9 @@
                             <constraint firstItem="q8T-Xg-gMA" firstAttribute="top" secondItem="vhA-NP-jo1" secondAttribute="bottom" id="vAD-hr-6IK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="vhA-NP-jo1" id="eat-3T-sQH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lx6-Ez-dHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

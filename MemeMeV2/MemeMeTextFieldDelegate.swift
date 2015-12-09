@@ -1,6 +1,6 @@
 //
 //  MemeMeTextFieldDelegate.swift
-//  MemeMeV1 - MemeMe 1.0
+//  MemeMeV2 - MemeMe 2.0
 //
 //  Created by Joshua Hunsberger on 11/14/15.
 //  Copyright © 2015 Joshua Hunsberger. All rights reserved.

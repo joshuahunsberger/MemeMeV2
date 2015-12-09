@@ -1,6 +1,6 @@
 //
 //  MemeTableViewController.swift
-//  MemeMeV2
+//  MemeMeV2 - MemeMe 2.0
 //
 //  Created by Joshua Hunsberger on 11/29/15.
 //  Copyright © 2015 Joshua Hunsberger. All rights reserved.
@@ -47,8 +47,13 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // TODO: navigate to meme detail view
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        
+        detailController.meme = memes[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
     
     /* Interface Builder Action Functions */
