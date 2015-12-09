@@ -13,6 +13,15 @@ class MemeCollectionViewController: UICollectionViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+    // Set default text macro style attributes
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor(),
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
+        NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
+    ]
+
+    
     override func viewDidAppear(animated: Bool) {
         collectionView?.reloadData()
     }
@@ -23,8 +32,13 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SavedMemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
+        let meme = memes[indexPath.row]
+        
+        cell.memeImageView.image = meme.originalImage
+        cell.topTextLabel.attributedText = NSAttributedString(string: meme.topText, attributes: memeTextAttributes)
+        cell.bottomTextLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: memeTextAttributes)
 
-        cell.memeImageView.image = memes[indexPath.row].memeImage
+        
         
         return cell
     }
