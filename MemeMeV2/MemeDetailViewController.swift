@@ -19,4 +19,13 @@ class MemeDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         memeImageView.image = meme.memeImage
     }
+    
+    override func viewDidLoad() {
+        let editButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editMeme:")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    func editMeme(sender: UIBarButtonItem){
+        // TODO: Navigate to meme editor and display current meme
+    }
 }
