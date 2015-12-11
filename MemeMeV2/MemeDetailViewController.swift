@@ -26,6 +26,18 @@ class MemeDetailViewController: UIViewController {
     }
     
     func editMeme(sender: UIBarButtonItem){
-        // TODO: Navigate to meme editor and display current meme
+        let memeEditorViewController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        let navigationController = UINavigationController(rootViewController: memeEditorViewController)
+
+        self.presentViewController(navigationController, animated: true, completion:
+            {
+                memeEditorViewController.topTextField.text = self.meme.topText
+                memeEditorViewController.bottomTextField.text = self.meme.bottomText
+                memeEditorViewController.imagePickerView.image = self.meme.originalImage
+                memeEditorViewController.shareButton.enabled = true
+                
+            }
+        )
+        self.navigationController?.popToRootViewControllerAnimated(false)
     }
 }
