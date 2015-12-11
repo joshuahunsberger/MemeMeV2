@@ -13,6 +13,8 @@ class MemeCollectionViewController: UICollectionViewController {
     /* Interface Builder outlet variables */
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    var messageLabel: UILabel!
+    
     var memes : [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
@@ -34,6 +36,12 @@ class MemeCollectionViewController: UICollectionViewController {
         flowLayout.minimumLineSpacing = space
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSizeMake(wDimension, hDimension)
+        
+        messageLabel = UILabel(frame: CGRectMake(0,0,collectionView!.bounds.size.width,collectionView!.bounds.size.height))
+        messageLabel.text = "No memes to show. Add one with the + button."
+        messageLabel.textAlignment = NSTextAlignment.Center
+        messageLabel.sizeToFit()
+        collectionView!.backgroundView = messageLabel
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,6 +50,12 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(memes.count == 0){
+            messageLabel.hidden = false
+        } else {
+            messageLabel.hidden = true
+        }
+        
         return memes.count
     }
     
