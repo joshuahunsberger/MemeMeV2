@@ -68,11 +68,11 @@
 		422354EA1BEF9A5100A2EAEE /* MemeMeV2 */ = {
 			isa = PBXGroup;
 			children = (
-				422354EB1BEF9A5100A2EAEE /* AppDelegate.swift */,
-				422354ED1BEF9A5100A2EAEE /* MemeEditorViewController.swift */,
-				4269155D1BFEDDAA00B73B7F /* Meme.swift */,
-				4290F4261BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift */,
 				422354EF1BEF9A5100A2EAEE /* Main.storyboard */,
+				422354EB1BEF9A5100A2EAEE /* AppDelegate.swift */,
+				4269155D1BFEDDAA00B73B7F /* Meme.swift */,
+				422354ED1BEF9A5100A2EAEE /* MemeEditorViewController.swift */,
+				4290F4261BF789FE00DF3A25 /* MemeMeTextFieldDelegate.swift */,
 				42C743041C17F0D40028C5DB /* MemeDetailViewController.swift */,
 				426B53921C151F89002B6130 /* MemeTableViewCell.swift */,
 				422354F21BEF9A5100A2EAEE /* Assets.xcassets */,

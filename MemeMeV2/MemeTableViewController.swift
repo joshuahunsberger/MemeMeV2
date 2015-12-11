@@ -9,6 +9,7 @@
 import UIKit
 
 class MemeTableViewController: UITableViewController {
+    var messageLabel: UILabel!
     
     var memes : [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
@@ -28,10 +29,21 @@ class MemeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
+        //self.tableView.tableFooterView = UIView()
+        messageLabel = UILabel(frame: CGRectMake(0,0,tableView.bounds.size.width,tableView.bounds.size.height))
+        messageLabel.text = "No memes yet"
+        messageLabel.textAlignment = NSTextAlignment.Center
+        messageLabel.sizeToFit()
+        tableView.backgroundView = messageLabel
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(memes.count == 0){
+            messageLabel.hidden = false
+        } else{
+            messageLabel.hidden = true
+        }
         return memes.count
     }
     
@@ -48,7 +60,6 @@ class MemeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: navigate to meme detail view
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         detailController.meme = memes[indexPath.row]
