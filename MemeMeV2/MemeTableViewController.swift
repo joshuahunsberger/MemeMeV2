@@ -56,6 +56,18 @@ class MemeTableViewController: UITableViewController {
         self.navigationController?.pushViewController(detailController, animated: true)
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.memes.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
+    
     /* Interface Builder Action Functions */
 
     
