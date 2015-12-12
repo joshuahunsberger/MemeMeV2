@@ -46,6 +46,6 @@ Saved memes can also be viewed in a collection view:
 
 Pressing on a meme in either view brings up the meme detail view to view the full image.
 
-![Detail View](screenshots/collection_view.jpg)
+![Detail View](screenshots/meme_detail.jpg)
 
 Pressing the edit button brings up the meme editor again.
