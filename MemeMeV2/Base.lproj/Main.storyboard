@@ -157,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRg-x1-xex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="814"/>
+            <point key="canvasLocation" x="-409" y="814"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="Si0-5R-am1">
@@ -302,7 +302,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpQ-ev-199" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="1570"/>
+            <point key="canvasLocation" x="-409" y="1570"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="zQK-8D-Dyz">
