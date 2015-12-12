@@ -82,10 +82,8 @@ class MemeTableViewController: UITableViewController {
     /* Interface Builder Action Functions */
 
     
-    @IBAction func addNewMeme(sender: UIBarButtonItem) {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-        let navigationController = UINavigationController(rootViewController: controller)
-        
-        self.presentViewController(navigationController, animated: true, completion: nil)
+    @IBAction func addNewMeme(sender: UIBarButtonItem) {        
+        let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
+        self.presentViewController(navController, animated: true, completion: nil)
     }
 }

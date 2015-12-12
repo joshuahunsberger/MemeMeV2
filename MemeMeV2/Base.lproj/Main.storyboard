@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bwb-ti-tdu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bwb-ti-tdu">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MemeEditorViewController" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rx0-Ol-5M4">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwW-gr-84i">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="psI-nD-Wdq"/>
                                     <barButtonItem systemItem="camera" id="kg3-Jk-Syo">
@@ -43,18 +41,15 @@
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uk3-mF-f6q">
                                 <rect key="frame" x="0.0" y="139" width="600" height="17"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDl-xY-QwX">
                                 <rect key="frame" x="0.0" y="473" width="600" height="17"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bwW-gr-84i" secondAttribute="bottom" id="09K-t9-rC8"/>
@@ -68,7 +63,7 @@
                             <constraint firstItem="KDl-xY-QwX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cFt-PH-LgW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KDl-xY-QwX" secondAttribute="bottom" constant="110" id="gug-eQ-IwI"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="wOY-Hj-MHj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rx0-Ol-5M4" secondAttribute="bottom" id="x76-3u-dwS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rx0-Ol-5M4" secondAttribute="bottom" constant="44" id="x76-3u-dwS"/>
                             <constraint firstItem="bwW-gr-84i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xYm-7x-nkc"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yrh-Oa-QQq"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z88-hl-TgS"/>
@@ -129,7 +124,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="G0P-FN-z90">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -149,7 +143,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0v0-Tn-wui">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="Ygr-LR-YSr" kind="relationship" relationship="rootViewController" id="Rmz-HQ-Kui"/>
@@ -166,7 +159,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKY-c0-5KQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedMemeCell" rowHeight="118" id="waN-fd-1tU" customClass="MemeTableViewCell" customModule="MemeMeV2" customModuleProvider="target">
@@ -178,14 +170,12 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE8-kH-WTE">
                                             <rect key="frame" x="192" y="48" width="400" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-vM-2e5">
                                             <rect key="frame" x="8" y="9" width="176" height="99"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="99" id="WIu-z7-BKl"/>
                                                 <constraint firstAttribute="width" constant="176" id="pFt-B0-sw2"/>
@@ -193,7 +183,6 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lk-pI-fcS">
                                             <rect key="frame" x="8" y="8" width="176" height="24"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="176" id="dOY-QN-I2s"/>
                                             </constraints>
@@ -203,7 +192,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-v8-LaR">
                                             <rect key="frame" x="8" y="85" width="176" height="24"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="176" id="uAD-7n-GLP"/>
                                             </constraints>
@@ -212,7 +200,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="LQ9-v8-LaR" secondAttribute="bottom" id="8dO-GQ-BOb"/>
                                         <constraint firstItem="LQ9-v8-LaR" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="AUE-HN-Q3m"/>
@@ -225,7 +212,6 @@
                                         <constraint firstItem="4Lk-pI-fcS" firstAttribute="leading" secondItem="31D-Tm-9ur" secondAttribute="leadingMargin" id="sPK-yI-uCI"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="bottomTextLabel" destination="LQ9-v8-LaR" id="Lu7-9Y-5Wf"/>
                                     <outlet property="memeImageView" destination="oWo-vM-2e5" id="AyC-hD-NEo"/>
@@ -266,10 +252,8 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhA-NP-jo1">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <animations/>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vhA-NP-jo1" firstAttribute="top" secondItem="yel-LL-tF0" secondAttribute="bottom" id="WYv-q8-G3S"/>
@@ -294,7 +278,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NzU-wj-LQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="mZ3-nb-XSu" kind="relationship" relationship="rootViewController" id="xGM-Pv-mUF"/>
@@ -311,7 +294,6 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fig-0Z-vsb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8DV-o5-R0W">
                             <size key="itemSize" width="166" height="166"/>
@@ -329,27 +311,22 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-Fe-HjM">
                                             <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
-                                            <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwQ-ug-O5g">
                                             <rect key="frame" x="8" y="8" width="150" height="24"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49u-yG-gdw">
                                             <rect key="frame" x="8" y="134" width="150" height="24"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="ixw-Fe-HjM" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leading" id="2Sq-XS-eXL"/>
                                     <constraint firstItem="49u-yG-gdw" firstAttribute="leading" secondItem="YOM-rA-sff" secondAttribute="leadingMargin" id="5vE-g1-ulQ"/>
@@ -393,16 +370,14 @@
         <!--Navigation Controller-->
         <scene sceneID="9Fz-3E-ZIr">
             <objects>
-                <navigationController id="NoH-Lp-nZV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MemeEditorNavigationController" id="NoH-Lp-nZV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZJ9-eN-UHn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sOv-DI-6Td">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cLY-0i-vbu"/>
