@@ -18,7 +18,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    // Set default text macro style attributes
+    /// Default text macro style attributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -26,7 +26,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
     ]
     
-    // Instantiate the text field delegate
+    /// Instantiate the text field delegate
     let memeMeTextFieldDelegate = MemeMeTextFieldDelegate()
     
     /* Life cycle functions */
@@ -67,9 +67,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     /* ImagePickerController functions */
     
-    /**
-        Sets the imagePickerView's image to the image selected in the modal image picker
-    */
+    /// Sets the imagePickerView's image to the image selected in the modal image picker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // Get original image and display it in the imagePickerView
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -83,9 +81,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    /**
-        Dismisses the image picker
-    */
+    ///Dismisses the image picker
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         // Dismiss the image picker
         dismissViewControllerAnimated(true, completion: nil)
@@ -131,17 +127,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return keyboardSize.CGRectValue().height
     }
     
-    /** 
-        Sets up keyboard notification subscription
-    */
+    /// Sets up keyboard notification subscription
     func subscribeToKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
-    /** 
-        Tears down keyboard notification subscription
-    */
+    /// Tears down keyboard notification subscription
     func unsubscribeFromKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
@@ -156,7 +148,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         - Returns: A UIImage of the complete image macro
     */
     func generateImageMacro() -> UIImage {
-        
         // Hide toolbar so it is not in saved image
         toolbar.hidden = true
         // Set background to white for image
@@ -174,9 +165,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return imageMacro
     }
     
-    /**
-        Saves the current image macro to the saved memes collection
-    */
+    /// Saves the current image macro to the saved memes collection
     func save(newMeme: Meme){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.memes.append(newMeme)
@@ -185,9 +174,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     /* Interface Builder Action functions */
     
-    /**
-        Displays UIImagePicker for the photo library
-    */
+    /// Displays UIImagePicker for the photo library
     @IBAction func pickAnImageFromAlbum(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -195,9 +182,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    /** 
-        Displays UIImagePicker with the source as the camera
-    */
+    /// Displays UIImagePicker with the source as the camera
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -205,9 +190,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    /**
-        Generates an image from the screen and displays options to the user to share the image macro "meme"
-    */
+    /// Generates an image from the screen and displays options to the user to share the image macro "meme"
     @IBAction func shareMeme(sender: UIBarButtonItem) {
         let imageMacro = generateImageMacro()
         
@@ -225,11 +208,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         navigationController?.presentViewController(shareController, animated: true, completion: nil)
     }
     
-    /**
-        Clears the image and resets the top and bottom labels. Also reset share button to disabled.
-    */
+    /// Clears the image and resets the top and bottom labels. Also reset share button to disabled.
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
-

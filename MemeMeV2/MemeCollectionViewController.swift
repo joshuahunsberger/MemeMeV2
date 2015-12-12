@@ -13,13 +13,15 @@ class MemeCollectionViewController: UICollectionViewController {
     /* Interface Builder outlet variables */
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    /// Contains a message for the user when there are no memes for the collection view to display
     var messageLabel: UILabel!
     
+    /// Local variable for share meme array
     var memes : [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    // Set default text macro style attributes
+    // Default text macro style attributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -27,6 +29,9 @@ class MemeCollectionViewController: UICollectionViewController {
         NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
     ]
 
+    
+    /* Life cycle functions */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +54,10 @@ class MemeCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
     
+    
+    /* Collection view functions */
+    
+    /// Gets the number of memes in the shared meme array, displaying a text label if there are 0 memes.
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(memes.count == 0){
             messageLabel.hidden = false
@@ -59,6 +68,7 @@ class MemeCollectionViewController: UICollectionViewController {
         return memes.count
     }
     
+    /// Displays a custom collection view cell populated with meme details
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SavedMemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.row]
@@ -70,6 +80,7 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    /// Displays the meme from the selected cell in a new view and pushes that view onto the navigation stack
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
@@ -80,6 +91,7 @@ class MemeCollectionViewController: UICollectionViewController {
     
     /* Interface Builder action functions */
     
+    /// Presents the meme editor view
     @IBAction func addNewMeme(sender: UIBarButtonItem) {
         let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
         self.presentViewController(navController, animated: true, completion: nil)

@@ -8,7 +8,9 @@
 
 import UIKit
 
+/// Custom collection view cell for MemeCollectionViewController
 class MemeCollectionViewCell: UICollectionViewCell {
+    /* Interface Builder outlets */
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topTextLabel: UILabel!
     @IBOutlet weak var bottomTextLabel: UILabel!

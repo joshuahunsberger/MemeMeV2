@@ -9,19 +9,25 @@
 import UIKit
 
 class MemeTableViewController: UITableViewController {
-    var messageLabel: UILabel!
     
+    /// Contains a message for the user when there are no memes for the table view to display
+    var emptyMessageLabel: UILabel!
+    
+    /// Local variable for share meme array
     var memes : [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    // Set default text macro style attributes
+    /// Default text macro style attributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
         NSStrokeWidthAttributeName : -3.0,  // A negative value allows displaying both a fill and stroke
     ]
+    
+    
+    /* Life cycle functions */
     
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
@@ -30,23 +36,28 @@ class MemeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        messageLabel = UILabel(frame: CGRectMake(0,0,tableView.bounds.size.width,tableView.bounds.size.height))
-        messageLabel.text = "No memes to show. Add one with the + button."
-        messageLabel.textAlignment = NSTextAlignment.Center
-        messageLabel.sizeToFit()
-        tableView.backgroundView = messageLabel
+        emptyMessageLabel = UILabel(frame: CGRectMake(0,0,tableView.bounds.size.width,tableView.bounds.size.height))
+        emptyMessageLabel.text = "No memes to show. Add one with the + button."
+        emptyMessageLabel.textAlignment = NSTextAlignment.Center
+        emptyMessageLabel.sizeToFit()
+        tableView.backgroundView = emptyMessageLabel
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
+    
+    /* Table view functions */
+    
+    /// Gets the number of memes in the shared meme array, displaying a text label if there are 0 memes.
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(memes.count == 0){
-            messageLabel.hidden = false
+            emptyMessageLabel.hidden = false
         } else{
-            messageLabel.hidden = true
+            emptyMessageLabel.hidden = true
         }
         return memes.count
     }
     
+    /// Displays a custom table view cell populated with meme details
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("savedMemeCell") as! MemeTableViewCell
         let meme = memes[indexPath.row]
@@ -59,6 +70,7 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
+    /// Displays the meme from the selected cell in a new view and pushes that view onto the navigation stack
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
@@ -67,10 +79,12 @@ class MemeTableViewController: UITableViewController {
         self.navigationController?.pushViewController(detailController, animated: true)
     }
     
+    /// Returns true to indicate that all cells can be edited
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
+    ///Removes the current meme from the array if the delete button is selected
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -79,9 +93,10 @@ class MemeTableViewController: UITableViewController {
         }
     }
     
+    
     /* Interface Builder Action Functions */
 
-    
+    /// Presents the meme editor view
     @IBAction func addNewMeme(sender: UIBarButtonItem) {        
         let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
         self.presentViewController(navController, animated: true, completion: nil)

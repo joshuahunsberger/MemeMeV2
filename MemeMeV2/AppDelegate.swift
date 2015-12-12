@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    // Shared meme struct array
+    /// Shared meme struct array
     var memes = [Meme]()
 
 

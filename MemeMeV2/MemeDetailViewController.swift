@@ -12,8 +12,11 @@ class MemeDetailViewController: UIViewController {
     /* Interface Builder Outlet variables */
     @IBOutlet weak var memeImageView: UIImageView!
     
-    // Meme variable
+    /// Meme variable
     var meme: Meme!
+    
+    
+    /* Life cycle functions */
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +34,11 @@ class MemeDetailViewController: UIViewController {
         tabBarController?.tabBar.hidden = false
     }
     
+    /**
+        Presents a MemeEditorNavigation controller and sets the meme editor properities to the current meme
+     
+        Called by the edit button in the navigation bar
+    */
     func editMeme(sender: UIBarButtonItem){
         let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
         self.presentViewController(navController, animated: true, completion:

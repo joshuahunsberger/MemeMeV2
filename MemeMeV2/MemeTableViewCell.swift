@@ -8,8 +8,9 @@
 
 import UIKit
 
+/// Custom table view cell for MemeTableViewController
 class MemeTableViewCell: UITableViewCell {
-    
+    /* Interface Builder outlets */
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var memeTextLabel: UILabel!
     @IBOutlet weak var topTextLabel: UILabel!
