@@ -23,6 +23,10 @@
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwW-gr-84i">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fa9-xu-LTN"/>
+                                    <constraint firstAttribute="height" constant="32" id="j7E-X4-Wsc"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="psI-nD-Wdq"/>
                                     <barButtonItem systemItem="camera" id="kg3-Jk-Syo">
@@ -38,6 +42,18 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="u90-PC-p8V"/>
                                 </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="j7E-X4-Wsc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="368" width="600" height="44"/>
+                                    <mask key="constraints">
+                                        <exclude reference="fa9-xu-LTN"/>
+                                        <include reference="j7E-X4-Wsc"/>
+                                    </mask>
+                                </variation>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uk3-mF-f6q">
                                 <rect key="frame" x="0.0" y="139" width="600" height="17"/>
@@ -54,6 +70,7 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bwW-gr-84i" secondAttribute="bottom" id="09K-t9-rC8"/>
                             <constraint firstItem="rx0-Ol-5M4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xs-7L-ckD"/>
+                            <constraint firstItem="rx0-Ol-5M4" firstAttribute="bottom" secondItem="bwW-gr-84i" secondAttribute="top" id="DTe-Bz-nla"/>
                             <constraint firstItem="rx0-Ol-5M4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GLd-l9-IXW"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="HqK-2f-xxp"/>
                             <constraint firstAttribute="trailing" secondItem="bwW-gr-84i" secondAttribute="trailing" id="IOk-7V-Qik"/>
@@ -67,7 +84,6 @@
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="wOY-Hj-MHj">
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rx0-Ol-5M4" secondAttribute="bottom" constant="44" id="x76-3u-dwS"/>
                             <constraint firstItem="bwW-gr-84i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xYm-7x-nkc"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yrh-Oa-QQq"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z88-hl-TgS"/>
@@ -119,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-409" y="79"/>
+            <point key="canvasLocation" x="-409" y="78"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HXb-DH-NkP">
