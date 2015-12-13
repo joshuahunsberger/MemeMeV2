@@ -29,33 +29,26 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     /// Instantiate the text field delegate
     let memeMeTextFieldDelegate = MemeMeTextFieldDelegate()
     
+    
     /* Life cycle functions */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.delegate = memeMeTextFieldDelegate
-        bottomTextField.delegate = memeMeTextFieldDelegate
+        prepareTextField(topTextField, defaultText: "TOP")
+        prepareTextField(bottomTextField, defaultText: "BOTTOM")
         
         // Share button disabled until image selected
         shareButton.enabled = false
+        
+        // Disable camera button if camera not available on device
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         subscribeToKeyboardNotifications()
-        
-        // Disable camera button if camera not available on device
-        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        
-        // Set text attributes of top and bottom text fields
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        // Center text in text fields
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -169,6 +162,23 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func save(newMeme: Meme){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.memes.append(newMeme)
+    }
+    
+    
+    /* Setup functions */
+    
+    /** 
+        Set up the given text field attributes and behaviors for a given text field
+    
+        - parameter textField: The text field object to set up
+        - parameter defaultText: The text the textfield will display
+    */
+    func prepareTextField(textField: UITextField, defaultText: String){
+        textField.delegate = memeMeTextFieldDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.text = defaultText
+        textField.autocapitalizationType = .AllCharacters
+        textField.textAlignment = .Center
     }
     
     

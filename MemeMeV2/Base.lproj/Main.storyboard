@@ -244,7 +244,7 @@
                             <outlet property="delegate" destination="Ygr-LR-YSr" id="j8o-bf-G93"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="TableIcon" selectedImage="Table" id="yJz-bG-BBh"/>
+                    <tabBarItem key="tabBarItem" title="" image="TableIcon" selectedImage="TableIcon" id="yJz-bG-BBh"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="E0w-4v-7mw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uh0-Lc-g1n">
                             <connections>
@@ -409,7 +409,6 @@
     </scenes>
     <resources>
         <image name="CollectionIcon" width="30" height="30"/>
-        <image name="Table" width="30" height="30"/>
         <image name="TableIcon" width="30" height="30"/>
     </resources>
 </document>
