@@ -58,14 +58,14 @@
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="HqK-2f-xxp"/>
                             <constraint firstAttribute="trailing" secondItem="bwW-gr-84i" secondAttribute="trailing" id="IOk-7V-Qik"/>
                             <constraint firstItem="bwW-gr-84i" firstAttribute="top" secondItem="KDl-xY-QwX" secondAttribute="bottom" constant="25" id="MJN-Ar-rVB">
-                                <variation key="heightClass=compact" constant="15"/>
+                                <variation key="heightClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="rx0-Ol-5M4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="P3a-hc-KvH"/>
                             <constraint firstItem="KDl-xY-QwX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TC5-6M-lx2"/>
                             <constraint firstItem="KDl-xY-QwX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cFt-PH-LgW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KDl-xY-QwX" secondAttribute="bottom" constant="110" id="gug-eQ-IwI"/>
                             <constraint firstItem="uk3-mF-f6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="wOY-Hj-MHj">
-                                <variation key="heightClass=compact" constant="15"/>
+                                <variation key="heightClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rx0-Ol-5M4" secondAttribute="bottom" constant="44" id="x76-3u-dwS"/>
                             <constraint firstItem="bwW-gr-84i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xYm-7x-nkc"/>
