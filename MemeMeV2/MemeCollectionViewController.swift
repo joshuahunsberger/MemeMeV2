@@ -35,12 +35,7 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space: CGFloat = 3.0
-        let wDimension = (view.frame.width - (2*space)) / 3.0
-        let hDimension = (view.frame.height - (2*space)) / 6.0
-        flowLayout.minimumLineSpacing = space
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.itemSize = CGSizeMake(wDimension, hDimension)
+        configureFlowLayout(view.frame.size)
         
         emptyMessageLabel = UILabel(frame: CGRectMake(0,0,collectionView!.bounds.size.width,collectionView!.bounds.size.height))
         emptyMessageLabel.text = "No memes to show.\nAdd one with the + button."
@@ -54,6 +49,15 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         collectionView?.reloadData()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        // Check if flowlayout is instantiated from storyboard yet.  This can be called before it is set up.
+        if let _ = flowLayout{
+            configureFlowLayout(size)
+        }
     }
     
     
@@ -90,6 +94,20 @@ class MemeCollectionViewController: UICollectionViewController {
         
         navigationController?.pushViewController(detailController, animated: true)
     }
+    
+    
+    /* Custom functions */
+    
+    /// Resets the flow layout attributes
+    func configureFlowLayout(size: CGSize){
+        let space: CGFloat = 3.0
+        let minOrientationSize = min(size.height, size.width)
+        let dimension = (minOrientationSize - (2*space)) / 3.0
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+    }
+    
     
     /* Interface Builder action functions */
     
