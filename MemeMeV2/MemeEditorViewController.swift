@@ -151,7 +151,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // Hide toolbar so it is not in saved image
         toolbar.hidden = true
         // Set background to white for image
-        self.view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.whiteColor()
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
@@ -160,7 +160,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         // Unhide the toolbar and return background color after capturing the image
         toolbar.hidden = false
-        self.view.backgroundColor = UIColor.darkGrayColor()
+        view.backgroundColor = UIColor.darkGrayColor()
 
         return imageMacro
     }
@@ -210,6 +210,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     /// Clears the image and resets the top and bottom labels. Also reset share button to disabled.
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

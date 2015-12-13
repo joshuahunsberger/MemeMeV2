@@ -72,11 +72,11 @@ class MemeTableViewController: UITableViewController {
     
     /// Displays the meme from the selected cell in a new view and pushes that view onto the navigation stack
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         detailController.meme = memes[indexPath.row]
         
-        self.navigationController?.pushViewController(detailController, animated: true)
+        navigationController?.pushViewController(detailController, animated: true)
     }
     
     /// Returns true to indicate that all cells can be edited
@@ -98,7 +98,7 @@ class MemeTableViewController: UITableViewController {
 
     /// Presents the meme editor view
     @IBAction func addNewMeme(sender: UIBarButtonItem) {        
-        let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
-        self.presentViewController(navController, animated: true, completion: nil)
+        let navController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
+        presentViewController(navController, animated: true, completion: nil)
     }
 }

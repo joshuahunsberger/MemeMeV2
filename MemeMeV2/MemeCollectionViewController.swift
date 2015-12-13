@@ -36,8 +36,8 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         let space: CGFloat = 3.0
-        let wDimension = (self.view.frame.width - (2*space)) / 3.0
-        let hDimension = (self.view.frame.height - (2*space)) / 6.0
+        let wDimension = (view.frame.width - (2*space)) / 3.0
+        let hDimension = (view.frame.height - (2*space)) / 6.0
         flowLayout.minimumLineSpacing = space
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSizeMake(wDimension, hDimension)
@@ -82,18 +82,18 @@ class MemeCollectionViewController: UICollectionViewController {
     
     /// Displays the meme from the selected cell in a new view and pushes that view onto the navigation stack
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         detailController.meme = memes[indexPath.row]
         
-        self.navigationController?.pushViewController(detailController, animated: true)
+        navigationController?.pushViewController(detailController, animated: true)
     }
     
     /* Interface Builder action functions */
     
     /// Presents the meme editor view
     @IBAction func addNewMeme(sender: UIBarButtonItem) {
-        let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
-        self.presentViewController(navController, animated: true, completion: nil)
+        let navController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
+        presentViewController(navController, animated: true, completion: nil)
     }
 }

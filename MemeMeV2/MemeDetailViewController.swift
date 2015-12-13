@@ -26,7 +26,7 @@ class MemeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         let editButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editMeme:")
-        self.navigationItem.rightBarButtonItem = editButton
+        navigationItem.rightBarButtonItem = editButton
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -40,8 +40,8 @@ class MemeDetailViewController: UIViewController {
         Called by the edit button in the navigation bar
     */
     func editMeme(sender: UIBarButtonItem){
-        let navController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
-        self.presentViewController(navController, animated: true, completion:
+        let navController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorNavigationController") as! UINavigationController
+        presentViewController(navController, animated: true, completion:
             {
                 let memeEditorViewController = navController.topViewController as! MemeEditorViewController
                 memeEditorViewController.topTextField.text = self.meme.topText
@@ -51,6 +51,6 @@ class MemeDetailViewController: UIViewController {
                 
             }
         )
-        self.navigationController?.popToRootViewControllerAnimated(false)
+        navigationController?.popToRootViewControllerAnimated(false)
     }
 }
