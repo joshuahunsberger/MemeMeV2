@@ -14,7 +14,7 @@ class MemeCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     /// Contains a message for the user when there are no memes for the collection view to display
-    var messageLabel: UILabel!
+    var emptyMessageLabel: UILabel!
     
     /// Local variable for share meme array
     var memes : [Meme] {
@@ -42,11 +42,13 @@ class MemeCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSizeMake(wDimension, hDimension)
         
-        messageLabel = UILabel(frame: CGRectMake(0,0,collectionView!.bounds.size.width,collectionView!.bounds.size.height))
-        messageLabel.text = "No memes to show. Add one with the + button."
-        messageLabel.textAlignment = NSTextAlignment.Center
-        messageLabel.sizeToFit()
-        collectionView!.backgroundView = messageLabel
+        emptyMessageLabel = UILabel(frame: CGRectMake(0,0,collectionView!.bounds.size.width,collectionView!.bounds.size.height))
+        emptyMessageLabel.text = "No memes to show.\nAdd one with the + button."
+        emptyMessageLabel.textAlignment = NSTextAlignment.Center
+        emptyMessageLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        emptyMessageLabel.numberOfLines = 2
+        emptyMessageLabel.sizeToFit()
+        collectionView!.backgroundView = emptyMessageLabel
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,9 +62,9 @@ class MemeCollectionViewController: UICollectionViewController {
     /// Gets the number of memes in the shared meme array, displaying a text label if there are 0 memes.
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(memes.count == 0){
-            messageLabel.hidden = false
+            emptyMessageLabel.hidden = false
         } else {
-            messageLabel.hidden = true
+            emptyMessageLabel.hidden = true
         }
         
         return memes.count

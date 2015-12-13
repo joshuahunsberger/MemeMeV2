@@ -38,8 +38,10 @@ class MemeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         emptyMessageLabel = UILabel(frame: CGRectMake(0,0,tableView.bounds.size.width,tableView.bounds.size.height))
-        emptyMessageLabel.text = "No memes to show. Add one with the + button."
+        emptyMessageLabel.text = "No memes to show.\nAdd one with the + button."
         emptyMessageLabel.textAlignment = NSTextAlignment.Center
+        emptyMessageLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        emptyMessageLabel.numberOfLines = 2
         emptyMessageLabel.sizeToFit()
         tableView.backgroundView = emptyMessageLabel
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
