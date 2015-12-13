@@ -47,8 +47,7 @@
                                         <exclude reference="j7E-X4-Wsc"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="368" width="600" height="44"/>
+                                <variation key="heightClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="fa9-xu-LTN"/>
                                         <include reference="j7E-X4-Wsc"/>
@@ -159,7 +158,7 @@
         <scene sceneID="l41-Hl-3rQ">
             <objects>
                 <navigationController id="lFS-sK-VTZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Table" selectedImage="Table" id="xDG-cM-car"/>
+                    <tabBarItem key="tabBarItem" title="" image="TableIcon" selectedImage="TableIcon" id="xDG-cM-car"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0v0-Tn-wui">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -245,7 +244,7 @@
                             <outlet property="delegate" destination="Ygr-LR-YSr" id="j8o-bf-G93"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="Table" selectedImage="Table" id="yJz-bG-BBh"/>
+                    <tabBarItem key="tabBarItem" title="" image="TableIcon" selectedImage="Table" id="yJz-bG-BBh"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="E0w-4v-7mw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uh0-Lc-g1n">
                             <connections>
@@ -294,7 +293,7 @@
         <scene sceneID="VSk-xK-Ggi">
             <objects>
                 <navigationController id="tYq-Pw-xO5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Collection" selectedImage="Collection" id="Za6-SW-2Jp"/>
+                    <tabBarItem key="tabBarItem" title="" image="CollectionIcon" selectedImage="CollectionIcon" id="Za6-SW-2Jp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NzU-wj-LQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -371,7 +370,7 @@
                             <outlet property="delegate" destination="mZ3-nb-XSu" id="Rdq-X5-IhQ"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="" image="Collection" selectedImage="Collection" id="ZgG-NN-o4y"/>
+                    <tabBarItem key="tabBarItem" title="" image="CollectionIcon" selectedImage="CollectionIcon" id="ZgG-NN-o4y"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="Vjz-m8-PXh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKc-pY-sUE">
                             <connections>
@@ -409,7 +408,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Collection" width="30" height="30"/>
+        <image name="CollectionIcon" width="30" height="30"/>
         <image name="Table" width="30" height="30"/>
+        <image name="TableIcon" width="30" height="30"/>
     </resources>
 </document>
